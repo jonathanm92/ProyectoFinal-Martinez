@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="terceraEntrega.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="weather_container">
+            <div id="weather">
+    
+            </div>
+        </div>
+        <div class="hdBase">
+            <h1 class="">BASE DE DATOS DE ALMUNOS CON SUS NOTAS de Jonathan Martinez</h1>
+        </div>
+        <div class="container">
+            <h2>MENU</h2>
+            <div class="btn_wrapper">
+                <ul>
+                    <li>
+                        <button class="btn" id="btn-Agregar">Agregar Alumno</button>
+                        <div class="agregar_wrapper" id="agregar_wrapper">
+                                <div class="agregar-head">
+                                    <label for="Nombre">Alumno:</label>
+                                    <input type="text" placeholder="Nombre del alumno" id="task-nombre">
+                                    <label for="Edad">Edad:</label>
+                                    <input class="numberInput" type="number" placeholder="23" id="task-edad">
+                                </div>
+                                <div class="agregar_periodoSelect">
+                                    <label for="periodos">Meses del periodo:</label>
+                                    <select name="periodos" id="periodos" class="periodos">
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="agregar_periodo-wrapper" id="agregar_periodo-wrapper">
+                                    <div>
+                                        <label for="Nota1">Nota #1:</label>
+                                        <input class="notaInput" type="number" placeholder="#" id="nota1">
+                                        </div>
+                                        <div>
+                                            <label for="Nota2">Nota #2:</label>
+                                            <input class="notaInput" type="number" placeholder="#" id="nota2">
+                                        </div>
+                                        <div>
+                                            <label for="Nota3">Nota #3:</label>
+                                            <input class="notaInput" type="number" placeholder="#" id="nota3">
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn_finalizar" id="btn-Finalizar">Finalizar</button>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn" id="btn-ListaAlumnos">Lista de Alumnos</button>
+                        <div class="listaAlumnos" id="listaAlumnos">
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn" id="btn-BuscarAlumnos">Buscar Alumno</button>
+                        <div class="busqueda_wrapper" id="busqueda_wrapper">
+                            <label for="Nombre">Alumno:</label>
+                            <input type="text" placeholder="Nombre del alumno" id="task-nombreBusqueda">
+                            <button id="btn-search">Buscar!</button>
+                            <div class="divActualizar" id="divActualizar">
+                                <label for="periodos">Que desea realizar?</label>
+                                <select name="opcionActualizar" id="opcionActualizar" class="opcionActualizar">
+                                    <option value="1">Actualizar Nombre</option>
+                                    <option value="2">Actualizar Edad</option>
+                                    <option value="3">Actualizar Nota</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="agregarActualizar" id="agregarActualizar"></div>
+                        <div id="opcionesSeleccion"></div>
+                        <button class="btn_actualizar" id="btn-actualizar">Actualizar</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="terceraEntrega.js"></script>
+</body>
+</html>

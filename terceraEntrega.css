@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: #0f1419;
+    color: white;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hdBase{
+    text-align: center;
+    margin-top: 50px;
+}
+.btn:hover{
+    transform: translateY(0) scale(1.1);
+    color: black;
+    background-color: #e34444;
+    transition: 0.5s;
+}
+.container{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border: blue;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 30px;
+}
+.btn_wrapper{
+    margin-top: 25px;
+}
+.agregar_wrapper{
+    display: none;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: red;
+    background-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    line-height: 24px;
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.listaAlumnos{
+    border: red;
+    background-color: black;
+}
+.agregar-head{
+    font-weight: bolder;
+}
+.agregar_periodoSelect{
+    font-weight: bold;
+}
+.agregar_periodo-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.alumnoEnLista{
+    display: flex;
+    color: red;
+    justify-content: center;
+}
+.busqueda_wrapper{
+    display: none;
+    margin-top: 10px;
+}
+.btn {
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 30px;
+    border-radius: 25px;
+    border-color: #ff0000;
+    color: white;
+    background: black;
+    padding: 10px 20px 10px 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 300px;
+}
+.btn_finalizar{
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 10px 20px 10px 20px;
+    font-weight: bolder;
+}
+.numberInput{
+    width: 35px;
+}
+.notaInput{
+    width: 35px;
+}
+.agregar_wrapper-head{
+    margin-top: 20px;
+}
+li{
+    list-style-type: none;
+}
+.opcionesBusqueda{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.divActualizar{
+    display: none;
+}
+.opcionActualizar{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn_actualizar{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+.weather_container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-left: 85%;
+    border: blue;
+    border-style: solid;
+    border-radius: 15px;
+    width: 8%;
+    padding: 10px;
+}
