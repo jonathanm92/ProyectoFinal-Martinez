@@ -308,7 +308,6 @@ function mostrar_posicion(position){
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
         .then( response => response.json() )
         .then( data => {
-            console.log(data);
             weather.innerHTML = `<h1>${data.name}</h1>
                                     <p>Temp: ${data.main.temp}</p>
                                     <p>Clima: ${data.weather[0].main} <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png"></p>`
