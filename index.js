@@ -68,10 +68,8 @@ let recuperar_students = localStorage.getItem("students");
 
 const btnAgregar = document.getElementById("btn-Agregar");
 const btnListaAlumnos = document.getElementById("btn-ListaAlumnos");
-const btnBuscarAlumno = document.getElementById("btn-BuscarAlumnos");
 const btnFinAgregar = document.getElementById("btn-Finalizar");
 const btnSearch = document.getElementById("btn-search");
-const btnActualizar = document.getElementById("btn-actualizar");
 
 
 //variables suplementarias
@@ -79,7 +77,6 @@ const agregarContainer = document.getElementById("agregar_wrapper");
 const periodosSeleccionados = document.querySelector(".periodos");
 const listaAlumnos = document.getElementById("listaAlumnos");
 const weather = document.getElementById("weather");
-const opcionActualizar = document.querySelector(".opcionActualizar");
 let busquedaForm = document.getElementById("busqueda_wrapper");
 let value = periodosSeleccionados.value;
 let divActualizar = document.getElementById("divActualizar");
@@ -234,69 +231,6 @@ btnListaAlumnos.addEventListener("click", ()=>{
 
 
 
-//-------------- Boton de buscar Alumnos --------//
-
-btnBuscarAlumno.addEventListener("click", ()=>{
-    if(busquedaForm.style.display == 'block'){
-        busquedaForm.style.display = 'none';
-
-    }else {
-        busquedaForm.style.display = 'block';
-        btnSearch.addEventListener("click", ()=>{
-            fieldBusqueda = document.getElementById("task-nombreBusqueda").value;
-            recuperar_students = localStorage.getItem("students");
-            students = JSON.parse(recuperar_students);
-            resultadoBusqueda = students.find(isStudent);
-                if (resultadoBusqueda){
-                    let actualizarOpcion = prompt(`El alumno ${fieldBusqueda} se encuentra en la base de datos \n1)Actualizar Nombre \n2)Actualizar edad \n3)Actualizar nota \n4)RETORNAR \nQue desea realizar?`);
-                    divActualizar.style.display = 'block';
-                    test.innerHTML += `
-                    <label for="NombreNuevo">Nuevo Nombre:</label>
-                    <input type="text" placeholder="Nombre nuevo del alumno" id="task-nuevoNombre">
-                    `;
-                    btnActualizar.style.display = 'block';
-                    if (actualizarOpcion == 1){
-                        resultadoBusqueda.setNombre(prompt("Introduzca un nuevo nombre"));
-                    }else if (actualizarOpcion == 2){
-                        resultadoBusqueda.setEdad(prompt("Introduzca una nueva Edad"));
-                    }else if (actualizarOpcion == 3){
-                        resultadoBusqueda.setNota(calculadorLetra(calculadorNotas()));
-                    }
-                    else {
-                        alert("Opcion incorrecta.");
-                    }
-                }else {
-                    alert(`El alumno ${fieldBusqueda} NO se encuentra en la base de datos`);
-                }
-        })
-    }
-})
-
-opcionActualizar.addEventListener("change", (e) => {
-    opcion = opcionActualizar.value;
-    test.innerHTML = ``;
-    console.log(opcion);
-    if (opcion == 1 ){
-        test.innerHTML += `
-        <label for="NombreNuevo">Nuevo Nombre:</label>
-        <input type="text" placeholder="Nombre nuevo del alumno" id="task-nuevoNombre">
-        `;
-    }   
-
-})
-
-btnActualizar.addEventListener("click", ()=>{   
-    let nuevoDato = document.getElementById("task-nuevoNombre").value;
-    console.log(resultadoBusqueda);
-    recuperar_students = localStorage.getItem("students");
-    students = JSON.parse(recuperar_students);
-    resultadoBusqueda.nombre = nuevoDato;
-    console.log(students);
-    let students_JSON = JSON.stringify(students);
-    localStorage.setItem("students", students_JSON);
-    alert("Alumno Actualizado!");
-})
-
 //---------------------   Weather   ------------------//
 
 function mostrar_posicion(position){
@@ -305,7 +239,7 @@ function mostrar_posicion(position){
     let lon = position.coords.longitude;
     let lat = position.coords.latitude;
     
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric&lang=es`)
         .then( response => response.json() )
         .then( data => {
             weather.innerHTML = `<h1>${data.name}</h1>
